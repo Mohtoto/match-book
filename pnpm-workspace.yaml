@@ -1,0 +1,17 @@
+overrides:
+  adm-zip: ">=0.6.0"
+  vite: ">=8.0.16"
+  esbuild@<=0.24.2: ">=0.25.0"
+  next>postcss: ">=8.5.12"
+  ws: "^8.20.1"
+
+onlyBuiltDependencies:
+  - "@sentry/cli"
+  - "@tailwindcss/oxide"
+  - argon2
+  - inngest-cli
+  - msw
+
+ignoredBuiltDependencies:
+  - esbuild
+  - sharp
