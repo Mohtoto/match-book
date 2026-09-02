@@ -30,9 +30,12 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed) but accept .env.example
+# env files — never commit these. `.env.*` does not match a bare `.env`, which
+# is how real secrets reached the initial commit, so it is listed explicitly.
+.env
 .env.*
-.env.example
+# The template is the one file that should be tracked, so negate it.
+!.env.example
 
 # vercel
 .vercel
