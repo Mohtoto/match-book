@@ -4,75 +4,54 @@ import { Footer } from "@/components/layout/footer";
 import { AppHeader } from "@/components/layout/app-header";
 import React from "react";
 import useUser from "@/lib/users/useUser";
+import { Skeleton } from "@/components/ui/skeleton";
 
+/**
+ * Shimmer that matches the real layout: a 14-unit header with a brand and
+ * three nav items, then a page heading and the primary action block.
+ *
+ * Uses the Skeleton component rather than hardcoded greys so it follows the
+ * theme in dark mode.
+ */
 function DashboardSkeleton() {
   return (
-    <div className="flex flex-col h-screen">
-      {/* Header Shimmer */}
+    <div className="flex h-screen flex-col gap-4">
       <div className="border-b border-border/40 bg-background">
-        <div className="flex items-center justify-between p-4">
-          <div className="flex items-center gap-4">
-            {/* Logo/Brand shimmer */}
-            <div className="h-8 w-32 bg-gray-200 rounded-md animate-pulse" />
-            {/* Navigation items shimmer */}
-            <div className="hidden md:flex gap-4">
-              {[1, 2, 3].map((i) => (
-                <div
-                  key={i}
-                  className="h-4 w-20 bg-gray-200 rounded-md animate-pulse"
-                />
-              ))}
+        <div className="mx-auto flex h-14 max-w-(--breakpoint-xl) items-center justify-between px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-8">
+            <Skeleton className="h-6 w-28" />
+            <div className="hidden items-center gap-4 md:flex">
+              <Skeleton className="h-4 w-20" />
+              <Skeleton className="h-4 w-24" />
+              <Skeleton className="h-4 w-20" />
             </div>
           </div>
-          {/* User menu shimmer */}
-          <div className="flex items-center gap-4">
-            <div className="h-8 w-8 bg-gray-200 rounded-full animate-pulse" />
-            <div className="h-4 w-24 bg-gray-200 rounded-md animate-pulse" />
+          <Skeleton className="size-8 rounded-full" />
+        </div>
+      </div>
+
+      <div className="grow p-4 sm:p-2">
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 py-4">
+          <div className="flex flex-col gap-2">
+            <Skeleton className="h-7 w-64" />
+            <Skeleton className="h-4 w-96" />
+          </div>
+
+          {/* The primary action block. */}
+          <Skeleton className="h-28 w-full rounded-lg" />
+
+          <div className="flex flex-col gap-3">
+            <Skeleton className="h-4 w-28" />
+            <Skeleton className="h-10 w-full" />
+            <Skeleton className="h-10 w-full" />
           </div>
         </div>
       </div>
 
-      {/* Content Shimmer */}
-      <div className="grow p-4">
-        <div className="max-w-7xl mx-auto flex flex-col gap-6">
-          {/* Page title shimmer */}
-          <div className="h-8 w-64 bg-gray-200 rounded-md animate-pulse" />
-
-          {/* Content blocks shimmer */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className="p-6 rounded-lg border border-border/40 bg-card"
-              >
-                <div className="flex flex-col gap-4">
-                  <div className="h-4 w-24 bg-gray-200 rounded-md animate-pulse" />
-                  <div className="h-8 w-32 bg-gray-200 rounded-md animate-pulse" />
-                  <div className="h-4 w-full bg-gray-200 rounded-md animate-pulse" />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Footer Shimmer */}
       <div className="border-t border-border/40 bg-background">
-        <div className="flex items-center justify-between p-4 max-w-7xl mx-auto">
-          {/* Footer left side */}
-          <div className="flex items-center gap-4">
-            <div className="h-4 w-24 bg-gray-200 rounded-md animate-pulse" />
-            <div className="h-4 w-32 bg-gray-200 rounded-md animate-pulse" />
-          </div>
-          {/* Footer right side */}
-          <div className="flex items-center gap-4">
-            {[1, 2].map((i) => (
-              <div
-                key={i}
-                className="h-4 w-20 bg-gray-200 rounded-md animate-pulse"
-              />
-            ))}
-          </div>
+        <div className="mx-auto flex max-w-7xl items-center justify-between p-4">
+          <Skeleton className="h-4 w-40" />
+          <Skeleton className="h-4 w-24" />
         </div>
       </div>
     </div>

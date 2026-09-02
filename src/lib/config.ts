@@ -1,19 +1,21 @@
 import { AppConfigPublic } from "./types";
 
 export const appConfig: AppConfigPublic = {
-  projectName: "Indie Kit",
-  projectSlug: "indie-kit",
+  projectName: "Matchbook",
+  projectSlug: "matchbook",
   keywords: [
-    "Indie Kit",
-    "NextJS Boilerplate",
-    "NextJS SaaS",
-    "NextJS Starter Kit",
-    "SaaS Boilerplate",
-    "SaaS Starter Kit",
-    "Indie Kit Pro",
+    "Matchbook",
+    "supplier price list reconciliation",
+    "supplier price increase",
+    "price file comparison",
+    "SKU matching",
+    "distributor pricing",
+    "wholesale price update",
+    "ERP price import",
+    "catalogue reconciliation",
   ],
   description:
-    "Indie Kit is a NextJS starter kit for building your own SaaS in hours.",
+    "Upload your product catalogue export and a supplier's new price file, and get back a change report plus an import-ready file for your system.",
   auth: {
     enablePasswordAuth: false, // Set to true to enable password-based authentication
   },

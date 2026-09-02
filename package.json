@@ -75,6 +75,7 @@
     "drizzle-orm": "^0.45.2",
     "embla-carousel-auto-scroll": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
+    "exceljs": "^4.4.0",
     "fumadocs-core": "^16.14.3",
     "fumadocs-mdx": "^15.2.3",
     "fumadocs-ui": "^16.14.3",
